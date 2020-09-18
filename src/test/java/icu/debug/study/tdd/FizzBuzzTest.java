@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.lang.annotation.Documented;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import  org.junit.jupiter.api.Assertions;
 
 public class FizzBuzzTest {
 
@@ -22,7 +23,7 @@ public class FizzBuzzTest {
     @DisplayName("应该有一个run方法，接收一个int参数，返回一个string数据")
     public void should_have_run_method() {
         FizzBuzz fizzBuzz = getFizzBuzz();
-        String res = fizzBuzz.run(1);
+        String res = FizzBuzz.run(1);
     }
 
     @Test
@@ -49,7 +50,6 @@ public class FizzBuzzTest {
     })
     @DisplayName("run方法输入输出测试")
     public void test_run_method(int i, String targetResult) {
-        String res = this.getFizzBuzz().run(i);
-        assertEquals(res, targetResult);
+        assertEquals(FizzBuzz.run(i), targetResult);
     }
 }
